@@ -8,11 +8,9 @@ if(!empty($_POST['id'])) {
   $r = mysqli_query($dbc, $q);
   
   if(mysqli_num_rows($r)>0) {
-      //echo "<span class='status-not-available'> Username Not Available.</span>";
-      
+      echo "0";
   }else{
-      //echo "<span class='status-available'> Username Available.</span>";
-      
+      echo "1";
   }
 
 }
@@ -22,11 +20,9 @@ elseif(!empty($_POST['email'])){
   $r = mysqli_query($dbc, $q);
   
   if(mysqli_num_rows($r)>0) {
-      //echo "<span class='status-not-available'> Email Not Available.</span>";
-      
+      echo "0";
   }else{
-      //echo "<span class='status-available'> Email Available.</span>";
-      
+      echo "1";
   }
 	
 }

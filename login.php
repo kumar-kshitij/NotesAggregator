@@ -102,20 +102,14 @@
 				
 				<form method="post">
 				  
-				  <div class="form-group<?php if($id_st==1){echo " has-success has-feedback";}elseif($id_st==-1){echo " has-error has-feedback";} ?>">
+				  <div class="form-group has-feedback" id="11">
 				    <div class="input-group">
 					    <span class="input-group-addon">
 					    	<i class="fa fa-info-circle" data-toggle="tooltip" data-placement="top" title="Length: 5-10; Allowed Characters: a-z A-Z 0-9 ._@$%&" aria-hidden="true"></i>
 					    </span>
-					    <input type="text" class="form-control" name="id" id="id" placeholder="UserID" pattern="[a-zA-Z0-9.@$%&_]{5,10}" onblur="checkID()" required>
+					    <input type="text" class="form-control" name="id" id="id" placeholder="UserID" pattern="[a-zA-Z0-9.@$&_]{5,10}" onclick="removeClass('#11', '#21')" onblur="checkID()" required>
 				    </div>
-					    
-					    <?php if($id_st==1){ ?>
-					    	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-					    <?php }elseif($id_st==-1){ ?>
-					    	<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-					    <?php } ?>
-					    
+			    	<span class="glyphicon form-control-feedback" id="21" aria-hidden="true"></span>					    
 				  </div>
 				  <br />
 				  <div class="row">
@@ -129,31 +123,19 @@
 				    </div>
 				  	
 				  	<div class="col-md-6">
-				  		<div class="form-group<?php if($pwd_st==1){echo " has-success has-feedback";}elseif($pwd_st==-1){echo " has-warning has-feedback";} ?>">
-				    		<input type="password" class="form-control" name="re-pwd" id="re-pwd" placeholder="Re-enter Password" pattern=".{6,30}" onblur="checkPassword()" required>
-						    
-						    <?php if($pwd_st==1){ ?>
-						    	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-						    <?php }elseif($pwd_st==-1){ ?>
-						    	<span class="glyphicon glyphicon-warning-sign form-control-feedback" aria-hidden="true"></span>
-						    <?php } ?>
-						    
+				  		<div class="form-group has-feedback" id="12">
+				    		<input type="password" class="form-control" name="re-pwd" id="re-pwd" placeholder="Re-enter Password" pattern=".{6,30}" onclick="removeClass('#12', '#22')" onblur="checkPassword()" required>
+					    	<span class="glyphicon form-control-feedback" id="22" aria-hidden="true"></span>
 				    	</div>
 				    </div>
 				  </div>
 				  <br />
-				  <div class="form-group<?php if($email_st==1){echo " has-success has-feedback";}elseif($email_st==-1){echo " has-error has-feedback";} ?>">
-			    	<input type="email" class="form-control" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onblur="checkEmail()" required>
-				    
-				    <?php if($email_st==1){ ?>
-				    	<span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-				    <?php }elseif($email_st==-1){ ?>
-				    	<span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-				    <?php } ?>
-				    
+				  <div class="form-group has-feedback" id="13">
+			    	<input type="email" class="form-control" name="email" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" onclick="removeClass('#13', '#23')" onblur="checkEmail()" required>
+			    	<span class="glyphicon form-control-feedback" id="23" aria-hidden="true"></span>
 				  </div>
 				  <br />
-				  <input type="submit" class="btn btn-success" name="submitted" value="Submit"></input>
+				  <input type="submit" class="btn btn-success" name="submitted" onsubmit="return validate()" value="Create Account"></input>
 				
 				</form>
 			

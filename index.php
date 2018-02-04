@@ -6,7 +6,7 @@
 		header("Location: login.php");
 	}
 
-	//error_reporting(0);
+	error_reporting(0);
 	
 	include("connection.php");
 
@@ -54,7 +54,6 @@
 				case 1: include("upload.php");break;
 				case 2: include("download.php");break;
 				case 3: include("pr_settings.php");break;
-				default: header("Location: ?page=3");break;
 			} 
 			
 		?>

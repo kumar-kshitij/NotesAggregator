@@ -32,5 +32,9 @@
 	.dislikes{
 		color: red;
 	}
+	
+	.tooltip-inner {
+	    width: 350px; 
+	}
 		
 </style>
